@@ -23,10 +23,12 @@ import {
   Editor,
 } from "./pages";
 
+import { useStateContext } from "./contexts/ContextProvider";
+
 import "./App.css";
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
 
   return (
     <div>
@@ -65,8 +67,8 @@ const App = () => {
           <div>
             <Routes>
               {/* Dashboard */}
-              <Route path="/" element={<ECommerce />} />
-              <Route path="/ecommerce" element={<ECommerce />} />
+              <Route path="/" element={<Ecommerce />} />
+              <Route path="/ecommerce" element={<Ecommerce />} />
 
               {/* Pages */}
               <Route path="orders" element={<Orders />} />
@@ -76,7 +78,7 @@ const App = () => {
               {/* App */}
               <Route path="/kanban" element={<Kanban />} />
               <Route path="/editor" element={<Editor />} />
-              <Route path="/calender" element={<Calender />} />
+              <Route path="/calendar" element={<Calendar />} />
               <Route path="/color-picker" element={<ColorPicker />} />
 
               {/* Charts */}
