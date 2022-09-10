@@ -61,7 +61,7 @@ const Ecommerce = () => {
         <div className="bg-white dark:text-gray dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
           <div className="flex justify-between">
             <p className="font-semibold text-xl">Revenue Updates</p>
-            <div className="felx items-center gap-4">
+            <div className="flex items-center gap-4">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
                 <span>
                   <GoPrimitiveDot />
@@ -111,7 +111,7 @@ const Ecommerce = () => {
                 <Button
                   color="white"
                   bgColor="blue"
-                  tex="Download Report"
+                  text="Download Report"
                   borderRadius="10px"
                 />
               </div>

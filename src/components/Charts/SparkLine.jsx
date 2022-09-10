@@ -7,6 +7,28 @@ import {
 
 const SparkLine = ({ currentColor, id, type, height, width, data, color }) => {
   return (
+    // <SparklineComponent
+    //   id={id}
+    //   height={height}
+    //   width={width}
+    //   lineWidth={1}
+    //   valueType="Numeric"
+    //   fill={color}
+    //   border={{ color: currentColor, width: 2 }}
+    //   dataSource={data}
+    //   xName="x"
+    //   yName="y"
+    //   type={type}
+    //   tooltipSettings={{
+    //     visible: true,
+    //     format: "${x} : data ${y}",
+    //     trackLineSettings: {
+    //       visible: true,
+    //     },
+    //   }}
+    // >
+    //   <Inject services={[SparklineTooltip]} />
+    // </SparklineComponent>
     <SparklineComponent
       id={id}
       height={height}
@@ -15,17 +37,19 @@ const SparkLine = ({ currentColor, id, type, height, width, data, color }) => {
       valueType="Numeric"
       fill={color}
       border={{ color: currentColor, width: 2 }}
-      dataSource={data}
-      xName="x"
-      yName="y"
-      type={type}
       tooltipSettings={{
         visible: true,
-        format: "${x} : data ${y}",
+        // eslint-disable-next-line no-template-curly-in-string
+        format: "${x} : data ${yval}",
         trackLineSettings: {
           visible: true,
         },
       }}
+      markerSettings={{ visible: ["All"], size: 2.5, fill: currentColor }}
+      dataSource={data}
+      xName="x"
+      yName="yval"
+      type={type}
     >
       <Inject services={[SparklineTooltip]} />
     </SparklineComponent>
